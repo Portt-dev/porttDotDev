@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import {
   Box,
   Button,
@@ -18,7 +18,9 @@ interface props {
 const BetaPopUp = ({setShow}: props) => {
   const [email, setEmail] = useState('')
   const [loading, setLoading] = useState(false)
+  const [animate, setAnimate] = useState(0)
   const toast = useToast()
+  const popupRef = useRef<any>()
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     // attempt email entry creation to our db
@@ -36,6 +38,25 @@ const BetaPopUp = ({setShow}: props) => {
     // if not, dont do anything...
     // @TODO - at some point we could show a error toast/banner but not a priority right now
   }
+  useEffect(() => {
+    /**
+     * Alert if clicked on outside of element
+     */
+    function handleClickOutside(event: MouseEvent) {
+      if (popupRef.current && !popupRef.current.contains(event.target)) {
+        setAnimate(-600)
+        setTimeout(() => {
+          setShow(false)
+        }, 800)
+      }
+    }
+    // Bind the event listener
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      // Unbind the event listener on clean up
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [popupRef])
   return (
     <Box
       position="fixed"
@@ -49,9 +70,9 @@ const BetaPopUp = ({setShow}: props) => {
           position: 'relative',
           top: '50%',
         }}
-        animate={{y: 0, visibility: 'visible'}}
+        animate={{y: animate, visibility: 'visible'}}
         initial={{y: -200, visibility: 'hidden'}}
-        transition={{delay: 0.25, duration: 1}}
+        transition={{delay: 0.25, duration: 0.5}}
       >
         <Box
           position="relative"
@@ -66,7 +87,13 @@ const BetaPopUp = ({setShow}: props) => {
           transform="translate(-50%, -50%)"
         >
           <form onSubmit={e => handleSubmit(e)}>
-            <Flex direction="column" align="center" justify="center" gap={12}>
+            <Flex
+              direction="column"
+              align="center"
+              justify="center"
+              gap={12}
+              ref={el => (popupRef.current = el)}
+            >
               <Flex
                 direction="column"
                 gap={4}

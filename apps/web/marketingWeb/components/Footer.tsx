@@ -101,7 +101,11 @@ const Footer: React.FC = () => {
                   />
                 </Box>
               </Link>
-              <Link _focus={{}} href="#" isExternal>
+              <Link
+                _focus={{}}
+                href="https://www.linkedin.com/in/portt-dev/"
+                isExternal
+              >
                 <Box _hover={{cursor: 'pointer'}}>
                   <Image
                     width="30px"

@@ -94,8 +94,8 @@ const Footer: React.FC = () => {
               <Link _focus={{}} href="https://twitter.com/Porttapp" isExternal>
                 <Box _hover={{cursor: 'pointer'}}>
                   <Image
-                    width="40px"
-                    height="40px"
+                    width="30px"
+                    height="30px"
                     src="/assets/Twitter.svg"
                     alt="Twitter"
                   />
@@ -104,8 +104,8 @@ const Footer: React.FC = () => {
               <Link _focus={{}} href="#" isExternal>
                 <Box _hover={{cursor: 'pointer'}}>
                   <Image
-                    width="40px"
-                    height="40px"
+                    width="30px"
+                    height="30px"
                     src="/assets/LinkedIn.svg"
                     alt="LinkedIn"
                   />
@@ -114,8 +114,8 @@ const Footer: React.FC = () => {
               <Link _focus={{}} href="https://github.com/Portt-dev" isExternal>
                 <Box _hover={{cursor: 'pointer'}}>
                   <Image
-                    width="40px"
-                    height="40px"
+                    width="30px"
+                    height="30px"
                     src="/assets/Github.svg"
                     alt="Github"
                   />

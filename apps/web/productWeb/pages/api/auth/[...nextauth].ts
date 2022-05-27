@@ -1,9 +1,9 @@
-import NextAuth from "next-auth";
-import GithubProvider from "next-auth/providers/github";
-import { NextApiRequest, NextApiResponse } from "next";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
-import createJwt from "../../../helpers/createJwt";
-import prisma from "../../../prisma/client";
+import NextAuth from "next-auth"
+import GithubProvider from "next-auth/providers/github"
+import { NextApiRequest, NextApiResponse } from "next"
+import { PrismaAdapter } from "@next-auth/prisma-adapter"
+import createJwt from "../../../helpers/createJwt"
+import prisma from "../../../prisma/client"
 // we can hit this route with /api/auth/(signIn, callback, signOut, etc)
 export default (req: NextApiRequest, res: NextApiResponse) =>
   NextAuth(req, res, {
@@ -20,7 +20,7 @@ export default (req: NextApiRequest, res: NextApiResponse) =>
             image: profile.avatar_url,
             role: "developer", // users that signup with github always have developer roles
             porttApiJwt: null,
-          };
+          }
         },
       }),
     ],
@@ -31,11 +31,11 @@ export default (req: NextApiRequest, res: NextApiResponse) =>
       async jwt({ token, account }) {
         // Persist the OAuth access_token to the token right after signin
         if (account) {
-          const { accessToken, ...rest } = account;
-          token.accessToken = accessToken;
-          token.user = rest;
+          const { accessToken, ...rest } = account
+          token.accessToken = accessToken
+          token.user = rest
         }
-        return token;
+        return token
       },
       async session({ session, token }: any) {
         // get the user id and add it to the session
@@ -43,8 +43,7 @@ export default (req: NextApiRequest, res: NextApiResponse) =>
           where: {
             email: session.user.email,
           },
-        });
-
+        })
         // give them a new portt-api token when a session is created
         const { porttApiJwt } = await prisma.user.update({
           where: {
@@ -53,11 +52,11 @@ export default (req: NextApiRequest, res: NextApiResponse) =>
           data: {
             porttApiJwt: createJwt(user?.id as string),
           },
-        });
-        session.accessToken = token.user.access_token;
-        session.id = user?.id;
-        session.porttApiJwt = porttApiJwt;
-        return session;
+        })
+        session.accessToken = token.user.access_token
+        session.id = user?.id
+        session.porttApiJwt = porttApiJwt
+        return session
       },
     },
     pages: {
@@ -66,4 +65,4 @@ export default (req: NextApiRequest, res: NextApiResponse) =>
     session: { strategy: "jwt" },
     adapter: PrismaAdapter(prisma),
     secret: process.env.NEXTAUTH_SECRET,
-  });
+  })

@@ -1,23 +1,24 @@
-import NextLink from 'next/link'
-import { useEffect, useState } from 'react'
-import { signIn, signOut, useSession, getSession} from "next-auth/react"
-import { Octokit } from "@octokit/core";
+import NextLink from "next/link"
+import { useEffect, useState } from "react"
+import { signIn, signOut, useSession, getSession } from "next-auth/react"
+import { Octokit } from "@octokit/core"
 import { PrismaClient } from "@prisma/client"
-import createJwt from '../helpers/createJwt'
-import jwt from 'jsonwebtoken'
+import createJwt from "../helpers/createJwt"
+import { Box, Heading } from "@chakra-ui/react"
 interface props {
   name: string
 }
 
 const Home = ({ name }: props) => {
-
   const { data: session, status }: any = useSession()
-  console.log(createJwt('someUserIdYes'))
+  const [color, setColor] = useState("red")
+  console.log(session)
   return (
-    <div>
+    <Box>
       <a href="/api/auth/signin">Sign up here!</a>
       <a href="/api/hello">GET GITHUB DATA</a>
-    </div>
+      <Heading>THIS IS THE DASHBOARD PAGE</Heading>
+    </Box>
   )
 }
 
@@ -45,6 +46,4 @@ const Home = ({ name }: props) => {
   }
 }  */
 
-
 export default Home
-

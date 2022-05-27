@@ -9,10 +9,7 @@ import type { NextApiRequest, NextApiResponse } from "next"
 interface props {
   name: string
 }
-
 const Home = ({ name }: props) => {
-  const { data: session, status }: any = useSession()
-  const [color, setColor] = useState("red")
   return (
     <Box>
       <a href="/api/auth/signin">Sign up here!</a>

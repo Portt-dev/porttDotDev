@@ -5,6 +5,7 @@ import { Octokit } from "@octokit/core"
 import { PrismaClient } from "@prisma/client"
 import createJwt from "../helpers/createJwt"
 import { Box, Heading } from "@chakra-ui/react"
+import type { NextApiRequest, NextApiResponse } from "next"
 interface props {
   name: string
 }
@@ -12,7 +13,6 @@ interface props {
 const Home = ({ name }: props) => {
   const { data: session, status }: any = useSession()
   const [color, setColor] = useState("red")
-  console.log(session)
   return (
     <Box>
       <a href="/api/auth/signin">Sign up here!</a>
@@ -22,28 +22,16 @@ const Home = ({ name }: props) => {
   )
 }
 
-/* export async function getServerSideProps(req: any, res: any) {
-  const getData = async () => {
-    const prisma = new PrismaClient()
-
-    const data = await prisma.book.create({
-      data: {
-        title: "Testyeyey",
-        author: 'darren'
-      },
-    })
-
-    console.log(data)
-  
-  }
-  getData()  
- 
-  
+export async function getServerSideProps(ctx: any) {
+  const session = await getSession(ctx)
+  if (!session)
+    return {
+      redirect: { permanent: false, destination: "/auth/signin" },
+      props: {},
+    }
   return {
-    props: {
-      name: 'darren'
-    }, // will be passed to the page component as props
+    props: {},
   }
-}  */
+}
 
 export default Home

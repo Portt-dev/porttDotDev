@@ -6,7 +6,6 @@ import {
   Flex,
   Input,
   Link,
-  Image as Img,
   useToast,
   Spinner,
 } from '@chakra-ui/react'

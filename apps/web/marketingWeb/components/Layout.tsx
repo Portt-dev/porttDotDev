@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Container, Box} from '@chakra-ui/react'
+import {Box} from '@chakra-ui/react'
 import Footer from '../components/Footer'
 import Navigation from '../components/Navigation'
 import BetaPopUp from '../components/BetaPopUp'

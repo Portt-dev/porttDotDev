@@ -1,4 +1,4 @@
-import {ChakraProvider, Box} from '@chakra-ui/react'
+import {ChakraProvider} from '@chakra-ui/react'
 import {AppProps} from 'next/app'
 import {customTheme} from '../styles/chakra.config'
 import Layout from '../components/Layout'

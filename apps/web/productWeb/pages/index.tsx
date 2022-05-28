@@ -21,6 +21,7 @@ const Home = ({ name }: props) => {
 
 export async function getServerSideProps(ctx: any) {
   const session = await getSession(ctx)
+  // checks if the user has a current session and redirects accordingly
   if (!session)
     return {
       redirect: { permanent: false, destination: "/auth/signin" },

@@ -8,7 +8,7 @@ export default function SignIn({ providers }: any) {
   console.log(session)
   const router = useRouter()
   // if there is a session then we want to redirect back
-  if (session) router.push("/") // this is just here for if the user manually types in the auth/signin url
+  //if (session) router.push("/") // this is just here for if the user manually types in the auth/signin url
   return (
     <Box overflowY="hidden">
       <Box

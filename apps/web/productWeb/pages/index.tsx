@@ -1,15 +1,15 @@
-import NextLink from "next/link"
-import { useEffect, useState } from "react"
-import { signIn, signOut, useSession, getSession } from "next-auth/react"
-import { Octokit } from "@octokit/core"
-import { PrismaClient } from "@prisma/client"
-import createJwt from "../helpers/createJwt"
-import { Box, Heading } from "@chakra-ui/react"
-import type { NextApiRequest, NextApiResponse } from "next"
+import NextLink from 'next/link'
+import {useEffect, useState} from 'react'
+import {signIn, signOut, useSession, getSession} from 'next-auth/react'
+import {Octokit} from '@octokit/core'
+import {PrismaClient} from '@prisma/client'
+import createJwt from '../helpers/createJwt'
+import {Box, Heading} from '@chakra-ui/react'
+import type {NextApiRequest, NextApiResponse} from 'next'
 interface props {
   name: string
 }
-const Home = ({ name }: props) => {
+const Home = ({name}: props) => {
   return (
     <Box>
       <a href="/api/auth/signin">Sign up here!</a>
@@ -24,12 +24,11 @@ export async function getServerSideProps(ctx: any) {
   // checks if the user has a current session and redirects accordingly
   if (!session)
     return {
-      redirect: { permanent: false, destination: "/auth/signin" },
+      redirect: {permanent: false, destination: '/auth/signin'},
       props: {},
     }
   return {
     props: {},
   }
 }
-
 export default Home

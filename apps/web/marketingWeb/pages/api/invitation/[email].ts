@@ -1,5 +1,5 @@
 import {NextApiRequest, NextApiResponse} from 'next'
-import {database} from '../../../prisma/database'
+import prisma from '../../../prisma/database'
 /**
  *
  * @param req
@@ -9,7 +9,7 @@ import {database} from '../../../prisma/database'
 
 async function sendInvitation(req: NextApiRequest, res: NextApiResponse) {
   const {email} = req.query
-  const query = await database.prisma.betaEmail.create({
+  const query = await prisma.betaEmail.create({
     data: {
       email: `${email}`,
     },

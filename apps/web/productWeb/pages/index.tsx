@@ -13,7 +13,7 @@ const Home = ({type}: props) => {
   return (
     <Box>
       <a href="/api/auth/signin">Sign up here!</a>
-      <a href="/api/hello">GET GITHUB DATA</a>
+      <a href="/api/github">GET GITHUB DATA</a>
       <Heading>THIS IS THE DASHBOARD PAGE</Heading>
     </Box>
   )

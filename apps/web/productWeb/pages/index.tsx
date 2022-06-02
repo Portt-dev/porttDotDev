@@ -4,12 +4,12 @@ import {signIn, signOut, useSession, getSession} from 'next-auth/react'
 import {Octokit} from '@octokit/core'
 import {PrismaClient} from '@prisma/client'
 import createJwt from '../helpers/createJwt'
-import {Box, Heading} from '@chakra-ui/react'
+import {Box, Heading, Button} from '@chakra-ui/react'
 import type {NextApiRequest, NextApiResponse} from 'next'
 interface props {
-  name: string
+  type: string
 }
-const Home = ({name}: props) => {
+const Home = ({type}: props) => {
   return (
     <Box>
       <a href="/api/auth/signin">Sign up here!</a>

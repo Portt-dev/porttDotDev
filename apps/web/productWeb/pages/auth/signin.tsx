@@ -1,10 +1,10 @@
-import { getProviders, signIn, useSession } from "next-auth/react"
-import { useRouter } from "next/router"
-import { useEffect } from "react"
-import { Box, Flex, Button, Heading } from "@chakra-ui/react"
-import Image from "next/image"
-export default function SignIn({ providers }: any) {
-  const { data: session, status } = useSession()
+import {getProviders, signIn, useSession} from 'next-auth/react'
+import {useRouter} from 'next/router'
+import {useEffect} from 'react'
+import {Box, Flex, Button, Heading} from '@chakra-ui/react'
+import Image from 'next/image'
+export default function SignIn({providers}: any) {
+  const {data: session, status} = useSession()
   console.log(session)
   const router = useRouter()
   // if there is a session then we want to redirect back
@@ -83,5 +83,5 @@ export default function SignIn({ providers }: any) {
 }
 
 export async function getServerSideProps(context: any) {
-  return { props: { providers: await getProviders() } }
+  return {props: {providers: await getProviders()}}
 }

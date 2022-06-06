@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev && npx prisma generate",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -13,6 +13,7 @@
   "dependencies": {
     "@chakra-ui/react": "^2.0.0-next.5",
     "@chakra-ui/theme-tools": "^2.0.1",
+    "@chakra-ui/utils": "^2.0.1",
     "@octokit/core": "^3.6.0",
     "@prisma/client": "^3.11.0",
     "jsonwebtoken": "^8.5.1",

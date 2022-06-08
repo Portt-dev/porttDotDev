@@ -6,10 +6,7 @@ import {PrismaClient} from '@prisma/client'
 import createJwt from '../helpers/createJwt'
 import {Box, Heading, Button} from '@chakra-ui/react'
 import type {NextApiRequest, NextApiResponse} from 'next'
-interface props {
-  type: string
-}
-const Home = ({type}: props) => {
+const Home = () => {
   return (
     <Box>
       <a href="/api/auth/signin">Sign up here!</a>

@@ -1,8 +1,7 @@
 import { ApolloServer, AuthenticationError } from "apollo-server";
 import { schema } from "./graphql/schema/schema";
-import jwt, { Jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import { database } from "./graphql/database";
-import type { JwtPayload } from "jsonwebtoken";
 
 const server = new ApolloServer({
   cors: {

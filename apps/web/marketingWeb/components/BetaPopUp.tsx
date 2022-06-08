@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect} from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import {
   Box,
   Button,
@@ -9,13 +9,13 @@ import {
   Spinner,
 } from '@chakra-ui/react'
 import Image from 'next/image'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 import createBetaEmail from '../scripts/createBetaEmail'
 import CustomToast from './CustomToast'
 interface props {
   setShow: React.Dispatch<React.SetStateAction<boolean>>
 }
-const BetaPopUp = ({setShow}: props) => {
+const BetaPopUp = ({ setShow }: props) => {
   const [email, setEmail] = useState('')
   const [loading, setLoading] = useState(false)
   const [animate, setAnimate] = useState(0)
@@ -70,18 +70,17 @@ const BetaPopUp = ({setShow}: props) => {
           position: 'relative',
           top: '50%',
         }}
-        animate={{y: animate, visibility: 'visible'}}
-        initial={{y: -200, visibility: 'hidden'}}
-        transition={{delay: 0.25, duration: 0.5}}
+        animate={{ y: animate, visibility: 'visible' }}
+        initial={{ y: -200, visibility: 'hidden' }}
+        transition={{ delay: 0.25, duration: 0.5 }}
       >
         <Box
           position="relative"
-          width={{base: '80%', sm: 400}}
+          width={{ base: '80%', sm: 400 }}
           borderRadius={25}
           p={6}
-          border="4px"
-          borderColor="brand.black"
           bg="white"
+          boxShadow="2px 2px 200px #A4BAED"
           top="50%"
           left="50%"
           transform="translate(-50%, -50%)"
@@ -110,7 +109,7 @@ const BetaPopUp = ({setShow}: props) => {
                 <Text
                   bgGradient="linear(to-r, #092AD0, #356DEE, #0EC5FF)"
                   bgClip="text"
-                  width={{base: 200, sm: 300}}
+                  width={{ base: 200, sm: 300 }}
                 >
                   Interested in joining our beta? Provide us with your email
                   bellow!
@@ -120,7 +119,7 @@ const BetaPopUp = ({setShow}: props) => {
                 <Input
                   onChange={e => setEmail(e.target.value)}
                   _hover={{}}
-                  _focus={{boxShadow: '0 0 0 3px #0EC5FF'}}
+                  _focus={{ boxShadow: '0 0 0 3px #0EC5FF' }}
                   borderRadius="full"
                   border="4px"
                   value={email}

@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "db": "npx prisma db push",
-    "pretty": "prettier --write \"./**/*.{ts,tsx,json}\""
+    "pretty": "prettier --write \"./**/*.{ts,tsx,json}\"",
+    "studio": "npx prisma studio"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.0.0-next.5",

@@ -1,5 +1,5 @@
-import type {NextPage} from 'next'
-import {useState} from 'react'
+import type { NextPage } from 'next'
+import { useState } from 'react'
 import {
   Box,
   Heading,
@@ -10,7 +10,7 @@ import {
   Container,
 } from '@chakra-ui/react'
 import Image from 'next/image'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 import BetaPopUp from '../components/BetaPopUp'
 const Home: NextPage = () => {
   const [hover, setHover] = useState(-300)
@@ -37,9 +37,9 @@ const Home: NextPage = () => {
         />
         {/* Hero Section */}
         <motion.div
-          animate={{y: 0, visibility: 'visible'}}
-          initial={{y: 200, visibility: 'hidden'}}
-          transition={{duration: 0.5, delay: 0.25}}
+          animate={{ y: 0, visibility: 'visible' }}
+          initial={{ y: 200, visibility: 'hidden' }}
+          transition={{ duration: 0.5, delay: 0.25 }}
         >
           <Center>
             <Flex
@@ -48,22 +48,34 @@ const Home: NextPage = () => {
               alignItems="center"
               justifyContent="center"
               mt={44}
-              width={{base: 350, md: 600, lg: 800}}
+              width={{ base: 327.68, sm: 512, md: 640, lg: 800, x: 1000 }}
             >
-              <Heading fontSize={{base: '50px', md: '90px', lg: '120px'}}>
-                The Open Source Turing alternative.
+              <Heading
+                fontSize={{
+                  base: '39.3216px',
+                  sm: '61.44px',
+                  md: '76.8px',
+                  lg: '96px',
+                  x: '120px',
+                }}
+              >
+                The team building platform for developers.
               </Heading>
-              <Button onClick={() => setShowPopUp(true)} mt={6}>
+              <Button
+                _hover={{ bg: 'brand.black', color: 'white' }}
+                onClick={() => setShowPopUp(true)}
+                mt={6}
+              >
                 Get plugged in
               </Button>
             </Flex>
           </Center>
         </motion.div>
         {/* Info section */}
-        <Box mt={{base: 56, md: 200}}>
+        <Box mt={{ base: 56, md: 200 }}>
           <Flex
-            direction={{base: 'column', md: 'row'}}
-            align={{base: 'center', md: 'center'}}
+            direction={{ base: 'column', md: 'row' }}
+            align={{ base: 'center', md: 'center' }}
             justify="space-between"
           >
             <Box
@@ -74,22 +86,23 @@ const Home: NextPage = () => {
               bgGradient="radial-gradient(closest-side, #A4BAED, transparent)"
             />
             <Box
-              maxWidth={{base: 350, md: 400, lg: 500}}
-              alignSelf={{base: 'start', md: 'center'}}
+              maxWidth={{ base: 350, md: 400, lg: 500 }}
+              alignSelf={{ base: 'start', md: 'center' }}
               zIndex={2}
             >
               <Heading
-                fontSize={{base: '45px', sm: '50px', lg: '60px'}}
+                fontSize={{ base: '45px', sm: '50px', lg: '60px' }}
                 size="lg"
               >
                 Where developers form dream teams.
               </Heading>
               <Text mt={2}>
-                Portt is a SaaS company that helps developers and employers form
-                teams through code driven vetting systems.
+                Portt is a fully open-source platform that helps developers form
+                their dream teams. Discover, vet, and partner with software
+                teams at any scale, all in one place.
               </Text>
             </Box>
-            <Box maxWidth={{base: 'full', md: 400, lg: 600}}>
+            <Box maxWidth={{ base: 'full', md: 400, lg: 600 }}>
               <Image
                 width="600"
                 height="600"
@@ -100,9 +113,9 @@ const Home: NextPage = () => {
           </Flex>
         </Box>
         {/* Info section2 */}
-        <Box mt={{base: 32, md: 12}}>
+        <Box mt={{ base: 32, md: 12 }}>
           <Flex
-            direction={{base: 'column-reverse', md: 'row'}}
+            direction={{ base: 'column-reverse', md: 'row' }}
             align="center"
             justify="space-between"
           >
@@ -114,8 +127,8 @@ const Home: NextPage = () => {
               />
             </Box>
             <Box
-              maxWidth={{base: 400, md: 500, lg: 600}}
-              m={{base: 'auto', md: 0}}
+              maxWidth={{ base: 400, md: 500, lg: 600 }}
+              m={{ base: 'auto', md: 0 }}
             >
               <Image
                 width="800px"
@@ -125,13 +138,13 @@ const Home: NextPage = () => {
               />
             </Box>
             <Box
-              maxWidth={{base: 'full', md: 300, lg: 400}}
+              maxWidth={{ base: 'full', md: 300, lg: 400 }}
               zIndex={2}
-              textAlign={{base: 'center', md: 'start'}}
+              textAlign={{ base: 'center', md: 'start' }}
             >
               <Heading
                 size="lg"
-                fontSize={{base: '45px', sm: '50px', lg: '60px'}}
+                fontSize={{ base: '45px', sm: '50px', lg: '60px' }}
               >
                 Lets get plugged In.
               </Heading>
@@ -144,7 +157,7 @@ const Home: NextPage = () => {
                 mt={6}
                 onMouseOver={() => setHover(-230)}
                 onMouseLeave={() => setHover(-300)}
-                _hover={{bg: 'brand.black', color: 'white'}}
+                _hover={{ bg: 'brand.black', color: 'white' }}
                 onClick={() => setShowPopUp(true)}
               >
                 Get plugged in
@@ -153,7 +166,7 @@ const Home: NextPage = () => {
           </Flex>
         </Box>
         <Box
-          display={{base: 'none', xl: 'flex'}}
+          display={{ base: 'none', xl: 'flex' }}
           position="absolute"
           zIndex={1}
           bottom={hover}

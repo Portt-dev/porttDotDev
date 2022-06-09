@@ -5,7 +5,7 @@ import {Octokit} from '@octokit/core'
 import {PrismaClient} from '@prisma/client'
 import createJwt from '../helpers/createJwt'
 import {Box, Heading, Button} from '@chakra-ui/react'
-import type {NextApiRequest, NextApiResponse} from 'next'
+import type {GetSessionParams} from 'next-auth/react'
 const Home = () => {
   return (
     <Box>
@@ -16,7 +16,7 @@ const Home = () => {
   )
 }
 
-export async function getServerSideProps(ctx: any) {
+export async function getServerSideProps(ctx: GetSessionParams) {
   const session = await getSession(ctx)
   // checks if the user has a current session and redirects accordingly
   if (!session)

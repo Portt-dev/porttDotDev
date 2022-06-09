@@ -1,13 +1,10 @@
-import {getProviders, signIn, useSession} from 'next-auth/react'
-import {useRouter} from 'next/router'
+import {getProviders, signIn, useSession, getSession} from 'next-auth/react'
 import {Box, Flex, Button, Heading, Container} from '@chakra-ui/react'
 import Image from 'next/image'
+import type {GetSessionParams} from 'next-auth/react'
 export default function SignIn({providers}: any) {
   const {data: session} = useSession()
   console.log(session)
-  const router = useRouter()
-  // if there is a session then we want to redirect back
-  if (session) router.push('/') // this is just here for if the user manually types in the auth/signin url
   return (
     <>
       <Box
@@ -57,8 +54,8 @@ export default function SignIn({providers}: any) {
               height="30px"
             />
             <Box mt={12}>
-              <Heading fontSize="50px" textAlign="center">
-                Lets get plugged in.
+              <Heading fontSize={{base: 40, sm: 50}} textAlign="center">
+                Let's get plugged in.
               </Heading>
               {Object.values(providers).map((provider: any) => (
                 <Box mt={4} key={provider.name}>
@@ -92,6 +89,13 @@ export default function SignIn({providers}: any) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getServerSideProps(ctx: GetSessionParams) {
+  /*   const session = await getSession(ctx)
+  // checks if the user has a current session and redirects accordingly
+  if (session)
+    return {
+      redirect: {permanent: false, destination: '/'},
+      props: {},
+    } */
   return {props: {providers: await getProviders()}}
 }

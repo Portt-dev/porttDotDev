@@ -19,7 +19,7 @@ export default function Document() {
           name="twitter:description"
           content="The open source team creation platform for developers."
         />
-        <meta name="twitter:site" content="@porttapp" />
+        <meta name="twitter:site" content="https://portt.dev" />
         <meta
           name="twitter:title"
           content="Where developers form dream teams."

@@ -16,7 +16,7 @@ export default function Document() {
         />
         <meta
           property="og:image"
-          content="https://portt.dev/assets/blurBg.svg"
+          content="https://portt.dev/assets/Hamburger.svg"
         />
       </Head>
       <body>

@@ -26,11 +26,11 @@ export default function Document() {
         />
         <meta
           name="twitter:image"
-          content="https://portt.dev/assets/AltLogo.svg"
+          content="https://portt.dev/assets/AltLogo.jpg"
         />
         <meta
           property="og:image"
-          content="https://portt.dev/assets/AltLogo.svg"
+          content="https://portt.dev/assets/AltLogo.jpg"
         />
         <meta
           property="og:title"
@@ -42,7 +42,7 @@ export default function Document() {
         />
         <meta
           property="og:image"
-          content="https://portt.dev/assets/AltLogo.svg"
+          content="https://portt.dev/assets/AltLogo.jpg"
         />
         <meta property="og:url" content="https://portt.dev" />
         <meta property="og:site_name" content="portt" />

@@ -12,11 +12,25 @@ export default function Document() {
         />
         <meta
           name="description"
-          content="The platform where developers form dream teams for and at any scale"
+          content="The open source team creation platform for developers"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:description"
+          content="The open source team creation platform for developers"
+        />
+        <meta name="twitter:site" content="@porttapp" />
+        <meta
+          name="twitter:title"
+          content="Where developers form dream teams"
+        />
+        <meta
+          name="twitter:image"
+          content="https://portt.dev/assets/AltLogo.svg"
         />
         <meta
           property="og:image"
-          content="https://portt.dev/assets/Hamburger.svg"
+          content="https://portt.dev/assets/AltLogo.svg"
         />
       </Head>
       <body>

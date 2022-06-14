@@ -1,10 +1,17 @@
 import React from 'react'
-import {Box, Menu, MenuButton, MenuList, MenuItem, Link} from '@chakra-ui/react'
+import {
+  Box,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+  Link,
+} from '@chakra-ui/react'
 import Image from 'next/image'
 interface props {
   setShow: React.Dispatch<React.SetStateAction<boolean>>
 }
-const MobileMenu = ({setShow}: props) => {
+const MobileMenu = ({ setShow }: props) => {
   return (
     <Box>
       <Menu>
@@ -20,7 +27,7 @@ const MobileMenu = ({setShow}: props) => {
           <Link href="https://github.com/Portt-dev" _hover={{}} isExternal>
             <MenuItem
               borderRadius={10}
-              _hover={{bg: 'brand.background'}}
+              _hover={{ bg: 'brand.background' }}
               _focus={{}}
             >
               Open Source
@@ -33,7 +40,7 @@ const MobileMenu = ({setShow}: props) => {
           >
             <MenuItem
               borderRadius={10}
-              _hover={{bg: 'brand.background'}}
+              _hover={{ bg: 'brand.background' }}
               _focus={{}}
             >
               About
@@ -41,7 +48,7 @@ const MobileMenu = ({setShow}: props) => {
           </Link>
           <MenuItem
             borderRadius={10}
-            _hover={{bg: 'brand.background'}}
+            _hover={{ bg: 'brand.background' }}
             _focus={{}}
             onClick={() => setShow(true)}
           >

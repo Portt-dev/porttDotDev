@@ -1,10 +1,10 @@
-import {ChakraProvider} from '@chakra-ui/react'
-import {AppProps} from 'next/app'
-import {customTheme} from '../styles/chakra.config'
+import { ChakraProvider } from '@chakra-ui/react'
+import { AppProps } from 'next/app'
+import { customTheme } from '../styles/chakra.config'
 import Layout from '../components/Layout'
 import Head from 'next/head'
 
-function App({Component, pageProps}: AppProps) {
+function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={customTheme}>
       <Head>

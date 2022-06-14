@@ -1,4 +1,4 @@
-import {Box, Text, Flex} from '@chakra-ui/react'
+import { Box, Text, Flex } from '@chakra-ui/react'
 import Image from 'next/image'
 import altLogo from '../public/assets/roundedLogo.svg'
 const CustomToast = () => {

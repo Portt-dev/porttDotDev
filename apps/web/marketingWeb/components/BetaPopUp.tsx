@@ -10,7 +10,7 @@ import {
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import createBetaEmail from '../scripts/createBetaEmail'
+import createBetaEmail from '../helpers/createBetaEmail'
 import CustomToast from './CustomToast'
 interface props {
   setShow: React.Dispatch<React.SetStateAction<boolean>>

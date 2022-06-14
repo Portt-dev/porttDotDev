@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import {
   Box,
   Container,
@@ -11,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 import Image from 'next/image'
 import CustomToast from './CustomToast'
-import createBetaEmail from '../scripts/createBetaEmail'
+import createBetaEmail from '../helpers/createBetaEmail'
 const Footer: React.FC = () => {
   const [email, setEmail] = useState('')
   const [loading, setLoading] = useState(false)
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
   return (
     <Box>
       <Box
-        display={{base: 'none', md: 'block'}}
+        display={{ base: 'none', md: 'block' }}
         position="absolute"
         zIndex={-1}
         right={0}
@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
                 border="4px"
                 p={1}
                 rounded="full"
-                display={{base: 'none', md: 'flex'}}
+                display={{ base: 'none', md: 'flex' }}
               >
                 <Flex align="center">
                   <Input
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
             </form>
             <Flex align="center" gap={2}>
               <Link _focus={{}} href="https://twitter.com/Porttapp" isExternal>
-                <Box _hover={{cursor: 'pointer'}}>
+                <Box _hover={{ cursor: 'pointer' }}>
                   <Image
                     width="30px"
                     height="30px"
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
                 href="https://www.linkedin.com/in/portt-dev/"
                 isExternal
               >
-                <Box _hover={{cursor: 'pointer'}}>
+                <Box _hover={{ cursor: 'pointer' }}>
                   <Image
                     width="30px"
                     height="30px"
@@ -115,7 +115,7 @@ const Footer: React.FC = () => {
                 </Box>
               </Link>
               <Link _focus={{}} href="https://github.com/Portt-dev" isExternal>
-                <Box _hover={{cursor: 'pointer'}}>
+                <Box _hover={{ cursor: 'pointer' }}>
                   <Image
                     width="30px"
                     height="30px"

@@ -1,12 +1,12 @@
-import React, {useEffect, useState} from 'react'
-import {Button, Flex, Container, Box, Link} from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
+import { Button, Flex, Container, Box, Link } from '@chakra-ui/react'
 import MobileMenu from './MobileMenu'
 import Image from 'next/image'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 interface props {
   setShow: React.Dispatch<React.SetStateAction<boolean>>
 }
-const Navigation = ({setShow}: props) => {
+const Navigation = ({ setShow }: props) => {
   const [scrollY, setScrollY] = useState(0)
   useEffect(() => {
     const handleScroll = () => {
@@ -22,9 +22,9 @@ const Navigation = ({setShow}: props) => {
   return (
     <Box position="fixed" zIndex={10} width="full">
       <motion.div
-        whileInView={{y: 0, visibility: 'visible'}}
-        initial={{y: 50, visibility: 'hidden'}}
-        transition={{duration: 0.5, delay: 0.25}}
+        whileInView={{ y: 0, visibility: 'visible' }}
+        initial={{ y: 50, visibility: 'hidden' }}
+        transition={{ duration: 0.5, delay: 0.25 }}
       >
         <Box
           bg={scrollY > 10 ? 'rgba(255,255,255,0.7)' : 'none'}
@@ -40,15 +40,15 @@ const Navigation = ({setShow}: props) => {
                 alt="portt logo"
               />
               <Box
-                display={{base: 'flex', md: 'none'}}
-                _hover={{cursor: 'pointer'}}
+                display={{ base: 'flex', md: 'none' }}
+                _hover={{ cursor: 'pointer' }}
               >
                 <MobileMenu setShow={setShow} />
               </Box>
               <Flex
                 gap={12}
                 alignItems="center"
-                display={{base: 'none', md: 'flex'}}
+                display={{ base: 'none', md: 'flex' }}
               >
                 <Link
                   _hover={{}}

@@ -1,10 +1,9 @@
 {
-  "name": "turborepo-basic-shared",
+  "name": "portt",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
     "apps/*",
-    "apps/web/*",
     "packages/*"
   ],
   "scripts": {
@@ -20,8 +19,10 @@
     "turbo": "latest"
   },
   "engines": {
-    "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
-  "packageManager": "npm@8.1.0"
+  "packageManager": "pnpm@7.9.1",
+  "dependencies": {
+    "@portt/ui": "workspace:^0.0.0"
+  }
 }

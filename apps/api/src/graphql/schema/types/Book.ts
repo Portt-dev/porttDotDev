@@ -1,11 +1,11 @@
-import { objectType, extendType, nonNull, intArg } from 'nexus'
-import { getBook, createBook } from '../../../resolvers'
+import {objectType, extendType, nonNull, intArg} from 'nexus'
+import {getBook, createBook} from '../../../resolvers'
 export const Book = objectType({
-  name: 'Book',            
+  name: 'Book',
   definition(t) {
-    t.int('id')            
-    t.string('title')     
-    t.string('author')      
+    t.int('id')
+    t.string('title')
+    t.string('author')
   },
 })
 
@@ -19,22 +19,22 @@ export const BookMutation = extendType({
       // resolver
       resolve(_root, _args) {
         return createBook()
-    },
+      },
     })
-  }
- })
+  },
+})
 
 export const BookQuery = extendType({
   type: 'Query',
   definition(t) {
     t.field('getBook', {
-        args: {                                        
-            id: nonNull(intArg()),                               
-        },
-        type: nonNull('Book'),
-        resolve(_root, _args) {
-            return getBook(_args)
-        },
+      args: {
+        id: nonNull(intArg()),
+      },
+      type: nonNull('Book'),
+      resolve(_root, _args) {
+        return getBook(_args)
+      },
     })
   },
 })

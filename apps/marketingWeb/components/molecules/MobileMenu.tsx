@@ -13,7 +13,7 @@ interface props {
 }
 const MobileMenu = ({ setShow }: props) => {
   return (
-    <Box >
+    <Box>
       <Menu>
         <MenuButton>
           <Image

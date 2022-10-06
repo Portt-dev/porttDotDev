@@ -26,13 +26,7 @@ export default function SignIn({providers}: any) {
         width={500}
         height={600}
       />
-      <Container
-        px={8}
-        position="fixed"
-        width="100%"
-        height="100%"
-        zIndex={12}
-      >
+      <Container px={8} position="fixed" width="100%" height="100%" zIndex={12}>
         <Box
           position="fixed"
           top="50%"
@@ -95,6 +89,6 @@ export async function getServerSideProps(ctx: GetSessionParams) {
     return {
       redirect: {permanent: false, destination: '/'},
       props: {},
-    } 
+    }
   return {props: {providers: await getProviders()}}
 }

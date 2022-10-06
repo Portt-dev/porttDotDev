@@ -15,7 +15,7 @@ async function sendInvitation(req: NextApiRequest, res: NextApiResponse) {
     },
   })
 
-  console.log(query);
+  console.log(query)
   return res.status(200).json({ data: query })
 }
 

@@ -57,6 +57,7 @@ const BetaPopUp = ({ setShow }: props) => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [popupRef])
+
   return (
     <Box
       position="fixed"

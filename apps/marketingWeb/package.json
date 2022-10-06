@@ -18,7 +18,7 @@
     "@chakra-ui/utils": "^2.0.1",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
-    "@portt/ui": "workspace:^0.0.0",
+    "@portt/ui": "link:../../packages/ui",
     "@prisma/client": "^3.14.0",
     "axios": "^0.27.2",
     "framer-motion": "^6.3.0",

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && npx prisma generate",
+    "build": "next build && pnpx prisma generate",
     "start": "next start",
     "lint": "next lint",
     "db": "npx prisma db push",
@@ -19,7 +19,7 @@
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@portt/ui": "link:../../packages/ui",
-    "@prisma/client": "^3.14.0",
+    "@prisma/client": "4.5.0-dev.17",
     "axios": "^0.27.2",
     "framer-motion": "^6.3.0",
     "next": "12.1.5",

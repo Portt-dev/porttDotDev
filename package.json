@@ -1,10 +1,9 @@
 {
-  "name": "turborepo-basic-shared",
+  "name": "portt",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
     "apps/*",
-    "apps/web/*",
     "packages/*"
   ],
   "scripts": {
@@ -12,16 +11,18 @@
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "dev-product": "npm run --workspace apps/web/productWeb/ dev",
-    "dev-marketing": "npm run --workspace apps/web/marketingWeb/ dev"
+    "product": "pnpm --filter product-web dev",
+    "marketing": "pnpm --filter marketing-web dev"
   },
   "devDependencies": {
     "prettier": "latest",
     "turbo": "latest"
   },
   "engines": {
-    "npm": ">=7.0.0",
     "node": ">=14.0.0"
   },
-  "packageManager": "npm@8.1.0"
+  "packageManager": "pnpm@7.9.1",
+  "dependencies": {
+    "@portt/ui": "workspace:^0.0.0"
+  }
 }

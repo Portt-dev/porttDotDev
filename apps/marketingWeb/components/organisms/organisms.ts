@@ -1,0 +1,5 @@
+export { default as HeroSection } from './HeroSection'
+export { default as InfoSection1 } from './InfoSection1'
+export { default as InfoSection2 } from './InfoSection2'
+export { default as InfoSection3 } from './InfoSection3'
+export { default as InfoSection4 } from './InfoSection4'

@@ -8,7 +8,7 @@
     "dev": "ts-node-dev src/server && npx prisma generate",
     "start": "node ./build/app/main.js",
     "db": "npx prisma db push",
-    "prettier": "npx prettier --write"
+    "pretty": "prettier --write \"./**/*.{ts,tsx,json}\""
   },
   "keywords": [],
   "author": "",

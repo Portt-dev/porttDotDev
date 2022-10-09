@@ -2,7 +2,7 @@ import { Heading, Flex, Box, Image, Text } from '@chakra-ui/react'
 
 const InfoSection1: React.FC = () => {
   return (
-    <Box mt={{ base: 56, md: 200 }}>
+    <Box mt={52}>
       <Flex
         direction={{ base: 'column', md: 'row' }}
         align={{ base: 'center', md: 'center' }}

@@ -46,7 +46,7 @@ export default (req: NextApiRequest, res: NextApiResponse) =>
           },
         })
         // give them a new portt-api token when a session is created
-        const {porttApiJwt} = await prisma.user.update({
+        const { porttApiJwt } = await prisma.user.update({
           where: {
             id: user?.id,
           },

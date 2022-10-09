@@ -1,19 +1,24 @@
 import type { NextPage } from 'next'
 import { useState } from 'react'
-import {
-  Box,
-  Container,
-  Fade
-
-} from '@chakra-ui/react'
+import { Box, Container, Fade } from '@chakra-ui/react'
 import { BetaPopup } from '../components/molecules/molecules'
-import { HeroSection, InfoSection1, InfoSection2, InfoSection3, InfoSection4 } from '../components/organisms/organisms'
+import {
+  HeroSection,
+  InfoSection1,
+  InfoSection2,
+  InfoSection3,
+  InfoSection4,
+} from '../components/organisms/organisms'
 
 const Home: NextPage = () => {
   const [showPopUp, setShowPopUp] = useState(false)
   return (
     <Box>
-      {showPopUp && <Fade in={showPopUp}><BetaPopup setShow={setShowPopUp} /></Fade>}
+      {showPopUp && (
+        <Fade in={showPopUp}>
+          <BetaPopup setShow={setShowPopUp} />
+        </Fade>
+      )}
       <Container maxW="1600px" px={10} position="relative">
         <Box
           position="absolute"
@@ -32,7 +37,7 @@ const Home: NextPage = () => {
           height={300}
         />
         {/* Hero Section */}
-        <HeroSection setShowPopup={setShowPopUp}/>
+        <HeroSection setShowPopup={setShowPopUp} />
         {/* Info #1 section */}
         <InfoSection1 />
         {/* Info #2 section */}
@@ -40,7 +45,7 @@ const Home: NextPage = () => {
         {/* Info #3 section */}
         <InfoSection3 />
         {/* Info #4 section */}
-        <InfoSection4 setShowPopup={setShowPopUp}/>
+        <InfoSection4 setShowPopup={setShowPopUp} />
       </Container>
     </Box>
   )

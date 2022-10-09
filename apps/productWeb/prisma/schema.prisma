@@ -1,8 +1,6 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider        = "prisma-client-js"
+  output          = "../node_modules/prisma/client"
   previewFeatures = ["referentialIntegrity"]
 }
 
@@ -13,7 +11,7 @@ datasource db {
 }
 
 model Book {
-  id     Int    @id @default(autoincrement()) // we would want to do this instead in a prod env: @id @default(uuid()) @db.Uuid
+  id     Int    @id @default(autoincrement())
   title  String
   author String
 }
@@ -45,7 +43,7 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid()) // we may want to change this to a UUID like in book comment
+  id            String    @id @default(cuid())
   name          String?
   email         String?   @unique
   emailVerified DateTime?

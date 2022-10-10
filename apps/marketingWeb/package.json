@@ -3,14 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev && pnpx prisma generate",
     "build": "next build && pnpx prisma generate",
     "start": "next start",
     "lint": "next lint",
     "db": "npx prisma db push",
     "prisma": "npx prisma generate",
     "pretty": "prettier --write \"./**/*.{ts,tsx,json}\"",
-    "studio": "npx prisma studio"
+    "studio": "pnpx prisma studio"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.3.1",

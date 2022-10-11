@@ -17,6 +17,8 @@ jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
       - name: Deploy to Staging
         id: deploy-vercel-stagingcle
         uses: amondnet/vercel-action@v20

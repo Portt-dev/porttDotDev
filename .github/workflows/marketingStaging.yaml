@@ -14,7 +14,7 @@ defaults:
   working-directory: ./apps/marketingWeb
 
 jobs:
-  Deploy-Preview:
+  MarketingWeb-Staging:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code

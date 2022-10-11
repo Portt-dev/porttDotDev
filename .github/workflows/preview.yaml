@@ -17,10 +17,11 @@ jobs:
   Deploy-Preview:
     runs-on: ubuntu-latest
     steps:
-      uses: amondnet/vercel-action@v20
-      with:
-        vercel-token: ${{ secrets.VERCEL_TOKEN }}
-        vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-        vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID_TL_ENGINE }}
-        vercel-args: '--prod' 
-        scope: ${{ secrets.VERCEL_ORG_ID }} 
+      - name: Deploy to Staging
+        id: deploy-vercel-stagingcle
+        uses: amondnet/vercel-action@v20
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID_TL_ENGINE }}
+          scope: ${{ secrets.VERCEL_ORG_ID }}

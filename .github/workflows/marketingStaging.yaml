@@ -20,7 +20,7 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
       - name: Deploy to Staging
-        id: deploy-vercel-stagingcle
+        id: deploy-vercel-staging
         uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}

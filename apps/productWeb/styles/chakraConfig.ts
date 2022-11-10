@@ -1,6 +1,6 @@
-import {background, extendTheme, theme as Theme} from '@chakra-ui/react'
-import {createBreakpoints} from '@chakra-ui/theme-tools'
-import {Button, Heading} from './components'
+import { background, extendTheme, theme as Theme } from '@chakra-ui/react'
+import { createBreakpoints } from '@chakra-ui/theme-tools'
+import { Button, Heading } from './components'
 const breakpoints = createBreakpoints({
   sm: '30em',
   md: '50em',

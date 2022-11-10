@@ -1,7 +1,7 @@
 import NextAuth from 'next-auth'
 import GithubProvider from 'next-auth/providers/github'
-import {NextApiRequest, NextApiResponse} from 'next'
-import {PrismaAdapter} from '@next-auth/prisma-adapter'
+import { NextApiRequest, NextApiResponse } from 'next'
+import { PrismaAdapter } from '@next-auth/prisma-adapter'
 import createJwt from '../../../helpers/createJwt'
 import prisma from '../../../prisma/client'
 // we can hit this route with /api/auth/(signIn, callback, signOut, etc)
@@ -28,16 +28,16 @@ export default (req: NextApiRequest, res: NextApiResponse) =>
       colorScheme: 'dark',
     },
     callbacks: {
-      async jwt({token, account}) {
+      async jwt({ token, account }) {
         // Persist the OAuth access_token to the token right after signin
         if (account) {
-          const {accessToken, ...rest} = account
+          const { accessToken, ...rest } = account
           token.accessToken = accessToken
           token.user = rest
         }
         return token
       },
-      async session({session, token}: any) {
+      async session({ session, token }: any) {
         console.log(session)
         // get the user id and add it to the session
         const user = await prisma.user.findUnique({
@@ -63,7 +63,7 @@ export default (req: NextApiRequest, res: NextApiResponse) =>
     pages: {
       signIn: '/auth/signin',
     },
-    session: {strategy: 'jwt'},
+    session: { strategy: 'jwt' },
     adapter: PrismaAdapter(prisma),
     secret: process.env.NEXTAUTH_SECRET,
   })

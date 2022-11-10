@@ -1,10 +1,10 @@
 import NextLink from 'next/link'
-import {useEffect, useState} from 'react'
-import {signIn, signOut, useSession, getSession} from 'next-auth/react'
-import {Octokit} from '@octokit/core'
+import { useEffect, useState } from 'react'
+import { signIn, signOut, useSession, getSession } from 'next-auth/react'
+import { Octokit } from '@octokit/core'
 import createJwt from '../helpers/createJwt'
-import {Box, Heading, Button} from '@chakra-ui/react'
-import type {GetSessionParams} from 'next-auth/react'
+import { Box, Heading, Button } from '@chakra-ui/react'
+import type { GetSessionParams } from 'next-auth/react'
 const Home = () => {
   return (
     <Box>
@@ -23,8 +23,8 @@ export async function getServerSideProps(ctx: GetSessionParams) {
     //   redirect: {permanent: false, destination: '/auth/signin'},
     //   props: {},
     // }
-  return {
-    props: {},
-  }
+    return {
+      props: {},
+    }
 }
 export default Home

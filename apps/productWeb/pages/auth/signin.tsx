@@ -1,10 +1,10 @@
-import {getProviders, signIn, useSession} from 'next-auth/react'
-import {Box, Flex, Button, Heading, Container} from '@chakra-ui/react'
+import { getProviders, signIn, useSession } from 'next-auth/react'
+import { Box, Flex, Button, Heading, Container } from '@chakra-ui/react'
 import Image from 'next/image'
-import type {GetSessionParams} from 'next-auth/react'
-import {getSession} from 'next-auth/react'
-export default function SignIn({providers}: any) {
-  const {data: session} = useSession()
+import type { GetSessionParams } from 'next-auth/react'
+import { getSession } from 'next-auth/react'
+export default function SignIn({ providers }: any) {
+  const { data: session } = useSession()
   return (
     <>
       <Box
@@ -47,7 +47,7 @@ export default function SignIn({providers}: any) {
               height="30px"
             />
             <Box mt={12}>
-              <Heading fontSize={{base: 40, sm: 50}} textAlign="center">
+              <Heading fontSize={{ base: 40, sm: 50 }} textAlign="center">
                 Let's get plugged in.
               </Heading>
               {Object.values(providers).map((provider: any) => (
@@ -87,8 +87,8 @@ export async function getServerSideProps(ctx: GetSessionParams) {
   // checks if the user has a current session and redirects accordingly
   if (session)
     return {
-      redirect: {permanent: false, destination: '/'},
+      redirect: { permanent: false, destination: '/' },
       props: {},
     }
-  return {props: {providers: await getProviders()}}
+  return { props: { providers: await getProviders() } }
 }

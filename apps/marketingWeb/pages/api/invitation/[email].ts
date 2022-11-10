@@ -13,10 +13,10 @@ async function sendInvitation(req: NextApiRequest, res: NextApiResponse) {
     data: {
       email: `${email}`,
     },
-  })
-
-  console.log(query)
-  return res.status(200).json({ data: query })
+  });
+  
+  console.log(query);
+  return res.status(200).json({ data: query }); 
 }
 
 export default sendInvitation

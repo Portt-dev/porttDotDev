@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 const InfoSection2: React.FC = () => {
   return (
-    <Box mt={{base: 0, md: 52}} position="relative">
+    <Box mt={{ base: 0, md: 52 }} position="relative">
       <Box
         position="absolute"
         zIndex={-1}

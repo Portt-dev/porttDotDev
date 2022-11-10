@@ -3,15 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev && pnpx prisma generate",
-    "prebuild": "test \"$CI\" = true && npx pnpm install -r --store=node_modules/.pnpm-store || echo skipping pnpm install",
-    "build": "next build && pnpx prisma generate",
+    "dev": "next dev",
+    "build": "pnpx prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
     "db": "npx prisma db push",
     "prisma": "npx prisma generate",
-    "pretty": "prettier --write \"./**/*.{ts,tsx,json}\"",
-    "studio": "pnpx prisma studio"
+    "studio": "pnpx prisma studio",
+    "postinstall": "npm run prisma"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.3.1",
@@ -20,10 +19,10 @@
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@portt/ui": "link:../../packages/ui",
-    "@prisma/client": "4.5.0-dev.17",
+    "@prisma/client": "4.5.0",
     "axios": "^0.27.2",
     "framer-motion": "^6.3.0",
-    "next": "12.1.5",
+    "next": "12.2.5",
     "react": "18.0.0",
     "react-dom": "18.0.0"
   },

@@ -3,12 +3,13 @@ import axios from 'axios'
 const createBetaEmail = async (
   email: string,
   setLoading: React.Dispatch<React.SetStateAction<boolean>>,
-) => {
-  const emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
+): Promise<boolean> => {
+  // RegEx for validating emails
+  const emailRegEx: RegExp = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/
   if (emailRegEx.test(email)) {
     try {
       // show the loading animation
-      setLoading(true)
+      setLoading(true)  
       await axios.get(`/api/invitation/${email}`)
       // if the user inputted a value email and we did not get an error, return true and show the toast
       return true

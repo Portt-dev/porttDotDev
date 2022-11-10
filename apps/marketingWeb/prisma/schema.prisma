@@ -1,11 +1,10 @@
 generator client {
   provider = "prisma-client-js"
   previewFeatures = ["referentialIntegrity"]
-  output = "../node_modules/.prisma/client"
 }
 datasource db {
   provider = "mysql"
-  url = env("DATABASE_URL")
+  url = "mysql://f5qv982f0rjsnrb1unc5:pscale_pw_MOOzTVaSn6ozEwQe0BQ0dFDWJMjJeXjyXj5dGGgrDvb@us-east.connect.psdb.cloud/portt-dev-beta-mails?sslaccept=strict"
   referentialIntegrity = "prisma"
 }                     
 

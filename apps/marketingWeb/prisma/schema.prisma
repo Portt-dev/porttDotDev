@@ -4,7 +4,7 @@ generator client {
 }
 datasource db {
   provider = "mysql"
-  url = "mysql://f5qv982f0rjsnrb1unc5:pscale_pw_MOOzTVaSn6ozEwQe0BQ0dFDWJMjJeXjyXj5dGGgrDvb@us-east.connect.psdb.cloud/portt-dev-beta-mails?sslaccept=strict"
+  url = env("DATABASE_URL")
   referentialIntegrity = "prisma"
 }                     
 

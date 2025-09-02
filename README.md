@@ -7,3 +7,7 @@
 - MarketingWeb - Portt's marketing website that is accessable via: https://portt.dev
 - ProductWeb - The actual product. Where developers form dream teams ⚡️
 - Api: Our internal product api. This api drives much of the functionality that powers ProductWeb.
+
+## Powered by Claude Code
+
+This project is enhanced by **Claude Code**, which is absolutely awesome! Claude Code provides incredible AI-powered development assistance, making our coding workflow more efficient and productive. 🚀

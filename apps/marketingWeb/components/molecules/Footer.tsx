@@ -124,6 +124,16 @@ const Footer: React.FC = () => {
                   />
                 </Box>
               </Link>
+              <Link _focus={{}} href="https://www.ycombinator.com" isExternal>
+                <Box _hover={{ cursor: 'pointer' }}>
+                  <Image
+                    width="30px"
+                    height="30px"
+                    src="/assets/Y_Combinator_logo.svg"
+                    alt="Y Combinator"
+                  />
+                </Box>
+              </Link>
             </Flex>
           </Flex>
         </Container>

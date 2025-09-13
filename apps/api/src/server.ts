@@ -3,6 +3,8 @@ import {schema} from './graphql/schema/schema'
 import jwt from 'jsonwebtoken'
 import {database} from './graphql/database'
 
+// yo darren
+
 const server = new ApolloServer({
   cors: {
     origin: '*',

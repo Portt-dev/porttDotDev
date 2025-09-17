@@ -50,4 +50,5 @@ const server = new ApolloServer({
 
 server.listen().then(({url}) => {
   console.log(`PorttDotDev GraphQL api running at ${url}graphql`)
+  console.log('Hi Darren! 👋')
 })
